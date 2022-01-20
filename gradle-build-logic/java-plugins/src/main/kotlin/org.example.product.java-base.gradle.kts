@@ -2,7 +2,6 @@
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin-jvm")
 }
 
 group = "org.example.product"
