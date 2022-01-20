@@ -1,9 +1,7 @@
-plugins {
-    id("application")
-}
 
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+
+plugins {
+    id("org.example.product.java-application")
 }
 
 application {
@@ -11,6 +9,7 @@ application {
 }
 
 dependencies {
+    // implementation("org.example.app:business-logic")
     implementation(project(":business-logic"))
     implementation("org.apache.commons:commons-lang3:3.6")
 }
