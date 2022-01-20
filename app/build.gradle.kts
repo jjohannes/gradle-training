@@ -8,6 +8,11 @@ application {
     mainClass.set("org.example.app.MyApp")
 }
 
+// tasks.named<org.example.GenerateStartScript>("generateStartScript") {
+tasks.generateStartScript {
+    mainClass.set("org.example.app.MyApp")
+}
+
 dependencies {
     // implementation("org.example.app:business-logic")
     implementation(project(":business-logic"))
