@@ -9,9 +9,6 @@ import org.gradle.api.tasks.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Set;
-
-import static java.nio.file.attribute.PosixFilePermission.*;
 
 @CacheableTask
 abstract public class GenerateStartScript extends DefaultTask {
@@ -32,11 +29,11 @@ abstract public class GenerateStartScript extends DefaultTask {
         File scriptOut = getScriptFile().get().getAsFile();
 
         Files.writeString(scriptOut.toPath(), "java -cp 'libs/*' " + main);
-        Files.setPosixFilePermissions(scriptOut.toPath(), Set.of(
-                OWNER_READ, OWNER_WRITE, OWNER_EXECUTE,
-                GROUP_READ, GROUP_EXECUTE,
-                OTHERS_EXECUTE, OTHERS_READ
-        ));
+        // Files.setPosixFilePermissions(scriptOut.toPath(), new HashSet<>(Arrays.asList(
+        //         OWNER_READ, OWNER_WRITE, OWNER_EXECUTE,
+        //         GROUP_READ, GROUP_EXECUTE,
+        //         OTHERS_EXECUTE, OTHERS_READ
+        // )));
     }
 
 

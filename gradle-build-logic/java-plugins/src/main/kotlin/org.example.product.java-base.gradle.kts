@@ -1,5 +1,3 @@
-
-
 plugins {
     id("java")
 }
@@ -11,6 +9,11 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
     }
+}
+
+dependencies.constraints {
+    implementation("org.apache.commons:commons-text:1.5")
+    implementation("org.apache.commons:commons-lang3:3.8") // or '3.8!!' for strict
 }
 
 tasks.test {

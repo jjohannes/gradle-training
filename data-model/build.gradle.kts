@@ -13,6 +13,33 @@ tasks.register<Zip>("zipCode") {
     destinationDirectory.set(layout.buildDirectory.dir("myOwn"))
 }
 
+dependencies {
+//    testImplementation("...")
+}
+
+val integrationTest = tasks.register<Test>("integrationTest") {
+    classpath = sourceSets.test.get().output.classesDirs + // classpath (dependencies)
+            configurations.testRuntimeClasspath.get()      // the test classes themselves
+    testClassesDirs = sourceSets.test.get().output.classesDirs
+
+    useJUnitPlatform() // Look for JUnit5 tests!
+
+    filter {
+        includeTestsMatching("*IT*")
+    }
+}
+
+tasks.test {
+    maxParallelForks = 10
+    filter {
+        excludeTestsMatching("*IT*")
+    }
+}
+
+tasks.register("testsOnCi") {
+    dependsOn(integrationTest)
+}
+
 tasks.test {
     // To never have the task up-to-date
     // outputs.upToDateWhen { false }

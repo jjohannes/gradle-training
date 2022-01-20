@@ -1,5 +1,3 @@
-
-
 plugins {
     id("org.example.product.java-application")
 }
@@ -16,5 +14,10 @@ tasks.generateStartScript {
 dependencies {
     // implementation("org.example.app:business-logic")
     implementation(project(":business-logic"))
-    implementation("org.apache.commons:commons-lang3:3.6")
+    implementation("org.apache.commons:commons-text")
+    implementation("org.apache.commons:commons-lang3")
+}
+
+configurations {
+    compileClasspath.get().shouldResolveConsistentlyWith(runtimeClasspath.get())
 }
