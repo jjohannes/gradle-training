@@ -1,7 +1,7 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        google()
+        // google()
         // maven("https://myrepo")
     }
     includeBuild("gradle-build-logic")
@@ -15,7 +15,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
-        google()
+        // google()
     }
     // includeBuild("../other-project")
 }

@@ -3,6 +3,7 @@ import org.example.GenerateStartScript
 plugins {
     id("org.example.product.java-base")
     id("application")
+    id("org.springframework.boot")
 }
 
 tasks.register<GenerateStartScript>("generateStartScript") {
