@@ -1,7 +1,3 @@
 plugins {
-    id("java-library")
-}
-
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    id("com.bosch.java-library")
 }
