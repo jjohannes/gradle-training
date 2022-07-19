@@ -5,9 +5,10 @@ import org.apache.commons.lang3.StringUtils;
 
 public class PrintService {
 
-    public void print(MessageModel model) {
-        StringUtils.capitalize("abc");
-        System.out.println(model.getMessage());
+    public String print(MessageModel model) {
+        String formattedMessage = StringUtils.capitalize(model.getMessage());
+        System.out.println(formattedMessage);
+        return formattedMessage;
     }
 
 }

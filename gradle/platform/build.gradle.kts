@@ -5,8 +5,9 @@ plugins {
 group = "com.example"
 
 javaPlatform.allowDependencies()
+
 dependencies {
-    // api(platform("com.jackson:jackson-bom:2.7.4"))
+    api(platform("om.fasterxml.jackson:jackson-bom:2.13.3"))
 }
 
 dependencies.constraints {

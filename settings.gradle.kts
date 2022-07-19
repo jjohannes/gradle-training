@@ -13,7 +13,9 @@ dependencyResolutionManagement {
     // repositories.maven("https://my.location/repo")
 
     // includeBuild("../other-project")
-    includeBuild("gradle/platform")
+
+    // As alternative to the catalog, we could use a platform project:
+    // includeBuild("gradle/platform")
 }
 
 rootProject.name = "gradle-training"

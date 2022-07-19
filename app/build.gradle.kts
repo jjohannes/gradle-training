@@ -1,5 +1,5 @@
 plugins {
-    id("com.bosch.java-application")
+    id("com.example.java-application")
 }
 
 application {

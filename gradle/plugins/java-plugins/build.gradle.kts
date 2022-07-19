@@ -1,7 +1,7 @@
 plugins {
     `kotlin-dsl` // id("kotlin-dsl")
-    // `groovy-gradle-plugin`
-    // `java-gradle-plugin`
+    // id("groovy-gradle-plugin") <-- for Groovy DSL
+    // id("java-gradle-plugin") <-- for writing Plugins in Java
 }
 
 tasks.compileJava {

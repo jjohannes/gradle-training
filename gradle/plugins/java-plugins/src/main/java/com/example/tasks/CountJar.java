@@ -1,4 +1,4 @@
-package com.bosch.tasks;
+package com.example.tasks;
 
 import org.gradle.api.DefaultTask;
 import org.gradle.api.file.ConfigurableFileCollection;

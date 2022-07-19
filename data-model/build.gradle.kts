@@ -1,3 +1,3 @@
 plugins {
-    id("com.bosch.java-library")
+    id("com.example.java-library")
 }

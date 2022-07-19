@@ -1,4 +1,4 @@
 plugins {
     id("java-library")
-    id("com.bosch.java-base")
+    id("com.example.java-base")
 }

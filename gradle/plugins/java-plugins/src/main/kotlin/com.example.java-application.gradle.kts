@@ -1,10 +1,9 @@
-import com.bosch.tasks.CountJar
+import com.example.tasks.CountJar
 
 plugins {
-    id("base")
     id("application")
     // id("org.springframework.boot")
-    id("com.bosch.java-base")
+    id("com.example.java-base")
 }
 
 tasks.compileJava {

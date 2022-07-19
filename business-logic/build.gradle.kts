@@ -1,6 +1,20 @@
 plugins {
-    id("com.bosch.java-library")
+    id("com.example.java-library")
 }
+
+dependencies {
+    // implementation(platform("com.example:platform"))
+
+    api(project(":data-model")) // == api("com.example.app:data-model")
+
+    // implementation("org.apache.commons:commons-lang3") // <-- Platform
+    implementation(libs.commons.lang) // <-- Version Catalog
+
+    // implementation("org.slf4j:slf4j-api")
+    // runtimeOnly("org.slf4j:slf4j-simple")
+    // testImplementation("junit:junit")
+}
+
 /*
 configurations {
     runtimeOnly
@@ -10,17 +24,3 @@ configurations {
     compileClasspath.extendsFrom(implementation, api)
 }
 */
-
-dependencies {
-    implementation(platform("com.example:platform"))
-
-    api(project(":data-model")) // == api("com.example.app:data-model")
-
-    implementation("org.apache.commons:commons-lang3") // <-- Platform
-    // implementation(libs.commons.lang) // <-- Version Catalog
-
-    // implementation("org.slf4j:slf4j-api")
-    // runtimeOnly("org.slf4j:slf4j-simple")
-    // testImplementation("junit:junit")
-}
-
