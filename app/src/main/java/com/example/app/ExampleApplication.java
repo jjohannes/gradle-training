@@ -1,11 +1,16 @@
 package com.example.app;
 
-import com.example.data.MessageModel;
-import com.example.service.PrintService;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class ExampleApplication {
 
     public static void main(String[] args) {
-        new PrintService().print(new MessageModel("Hi :)"));
+        SpringApplication.run(ExampleApplication.class, args);
     }
+
+    // public static void main(String[] args) {
+    //     new PrintService().print(new MessageModel("hi :)"));
+    // }
 }

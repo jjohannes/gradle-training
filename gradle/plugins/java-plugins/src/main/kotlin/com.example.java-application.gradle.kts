@@ -1,8 +1,8 @@
 import com.example.tasks.CountJar
 
 plugins {
-    id("application")
-    // id("org.springframework.boot")
+    // id("application")
+    id("org.springframework.boot")
     id("com.example.java-base")
 }
 
