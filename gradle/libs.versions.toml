@@ -1,0 +1,8 @@
+[versions]
+slf4J = "1.7.36"
+
+[libraries]
+commons-lang = "org.apache.commons:commons-lang3:3.12.0"
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4J"  }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4J"  }
+
