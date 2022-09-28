@@ -4,6 +4,7 @@ import org.gradle.api.DefaultTask;
 import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.CacheableTask;
+import org.gradle.api.tasks.Classpath;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.PathSensitive;
@@ -27,7 +28,7 @@ abstract public class JarCount extends DefaultTask {
     // abstract Property<String> getVersion();
 
     @InputFiles
-    @PathSensitive(PathSensitivity.NAME_ONLY)
+    @Classpath
     public abstract ConfigurableFileCollection getAllJars();
 
     @OutputFile
