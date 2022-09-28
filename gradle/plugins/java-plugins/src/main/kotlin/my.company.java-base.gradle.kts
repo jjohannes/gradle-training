@@ -40,6 +40,33 @@ tasks.withType<JavaCompile>().configureEach {
 //    options.encoding = "UTF-8"
 //}
 
-tasks.test {
 
+val integrationTest = sourceSets.create("integrationTest")
+
+tasks.test {
+    useJUnitPlatform {
+        // excludeTags("slow")
+    }
+
+    exclude("my.company.*")
+
+    // JUnit 5
+    // useJUnit() // JUnit 4
+    maxParallelForks = 4
 }
+
+tasks.register<Test>("integrationTest") {
+    classpath = integrationTest.runtimeClasspath
+    testClassesDirs = integrationTest.output
+
+    useJUnitPlatform {
+        // includeTags("slow")
+    }
+}
+
+// testing {
+//     suites.named<JvmTestSuite>("test") {
+//         useJUnitJupiter()
+//     }
+//    // suites.create<JvmTestSuite>("integrationTest")
+// }
