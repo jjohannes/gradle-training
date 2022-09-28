@@ -6,6 +6,18 @@ java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(19))
 }
 
+tasks.build {
+    group = "myown"
+}
+
+tasks.register("qualityCheck") {
+    group = "myown"
+    description = "runs all checks (but not tests)"
+
+    // dependsOn(tasks.checkstyle)
+    // dependsOn(tasks.spotbugs)
+}
+
 tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
 }
